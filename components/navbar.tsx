@@ -1,55 +1,60 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { Menu, X } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { cn } from "@/lib/utils"
+import { useState, useEffect } from "react";
+import { Menu, X } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 10)
-    }
+      setScrolled(window.scrollY > 10);
+    };
 
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const scrollToSection = (sectionId: string) => {
-    setIsOpen(false)
-    const element = document.getElementById(sectionId)
+    setIsOpen(false);
+    const element = document.getElementById(sectionId);
     if (element) {
-      const offsetTop = element.getBoundingClientRect().top + window.pageYOffset
+      const offsetTop =
+        element.getBoundingClientRect().top + window.pageYOffset;
       window.scrollTo({
         top: offsetTop,
         behavior: "smooth",
-      })
+      });
     }
-  }
+  };
 
   const navLinks = [
     { name: "Home", href: "home" },
     { name: "About", href: "about" },
     { name: "Tech Stack", href: "tech-stack" },
     { name: "Projects", href: "projects" },
-    { name: "Testimonials", href: "testimonials" },
     { name: "Contact", href: "contact" },
-  ]
+  ];
 
   return (
     <header
       className={cn(
         "fixed top-0 w-full z-50 transition-all duration-300",
-        scrolled ? "bg-background/80 backdrop-blur-md shadow-sm" : "bg-transparent",
+        scrolled
+          ? "bg-background/80 backdrop-blur-md shadow-sm"
+          : "bg-transparent",
       )}
     >
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <button onClick={() => scrollToSection("home")} className="text-2xl font-bold text-primary">
-            Memory<span className="text-destructive">Leaked</span>
+          <button
+            onClick={() => scrollToSection("home")}
+            className="text-2xl font-bold text-primary"
+          >
+            Pipes
           </button>
 
           {/* Desktop Navigation */}
@@ -67,7 +72,12 @@ export default function Navbar() {
           </nav>
 
           {/* Mobile Navigation Toggle */}
-          <Button variant="ghost" size="icon" className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
+          <Button
+            variant="ghost"
+            size="icon"
+            className="md:hidden"
+            onClick={() => setIsOpen(!isOpen)}
+          >
             {isOpen ? <X /> : <Menu />}
           </Button>
         </div>
@@ -93,6 +103,5 @@ export default function Navbar() {
         </div>
       )}
     </header>
-  )
+  );
 }
-

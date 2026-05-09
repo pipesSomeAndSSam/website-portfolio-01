@@ -1,17 +1,17 @@
-import type { Metadata } from "next"
-import Hero from "@/components/hero"
-import About from "@/components/about"
-import TechStack from "@/components/tech-stack"
-import Projects from "@/components/projects"
-import Testimonials from "@/components/testimonials"
-import Contact from "@/components/contact"
-import Footer from "@/components/footer"
-import Navbar from "@/components/navbar"
+import type { Metadata } from "next";
+import Hero from "@/components/hero";
+import About from "@/components/about";
+import TechStack from "@/components/tech-stack";
+import Projects from "@/components/projects";
+import Testimonials from "@/components/testimonials";
+import Contact from "@/components/contact";
+import Footer from "@/components/footer";
+import Navbar from "@/components/navbar";
 
 export const metadata: Metadata = {
-  title: "MemoryLeaked | Portfolio",
-  description: "Professional portfolio of MemoryLeaked - Software Developer",
-}
+  title: "Pipes | Portfolio",
+  description: "Professional portfolio of Pipes - Software Developer",
+};
 
 export default function Home() {
   return (
@@ -27,6 +27,5 @@ export default function Home() {
       </main>
       <Footer />
     </div>
-  )
+  );
 }
-
