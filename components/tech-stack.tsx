@@ -33,6 +33,7 @@ export default function TechStack() {
         { name: "Next.js", level: 75 },
         { name: "HTML/CSS", level: 80 },
         { name: "Tailwind CSS", level: 85 },
+        { name: "Figma", level: 85 },
       ],
     },
     database: {
