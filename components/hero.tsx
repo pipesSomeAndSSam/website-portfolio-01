@@ -53,7 +53,7 @@ export default function Hero() {
             </h2>
             <p className="text-lg text-muted-foreground mb-8 max-w-lg">
               I am a Computer Science student in Visayas States University and I
-              dream to become a UI/UX Designer.
+              dream to become a Fullstack Developer.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
