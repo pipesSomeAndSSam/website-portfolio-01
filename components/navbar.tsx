@@ -68,7 +68,14 @@ export default function Navbar() {
                 {link.name}
               </button>
             ))}
-            <Button>Resume</Button>
+
+            <a
+              href="Arradaza_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button>Resume</Button>
+            </a>
           </nav>
 
           {/* Mobile Navigation Toggle */}
