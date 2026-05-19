@@ -18,6 +18,15 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const handleClick = () => {
+    const link = document.createElement("a");
+    link.href = "Arradaza_Resume.pdf";
+    link.download = "Arradaza_Resume.pdf"; // filename for download
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   const scrollToSection = (sectionId: string) => {
     setIsOpen(false);
     const element = document.getElementById(sectionId);
@@ -69,13 +78,7 @@ export default function Navbar() {
               </button>
             ))}
 
-            <a
-              href="Arradaza_Resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Button>Resume</Button>
-            </a>
+            <Button onClick={handleClick}>Resume</Button>
           </nav>
 
           {/* Mobile Navigation Toggle */}
@@ -104,7 +107,9 @@ export default function Navbar() {
                   {link.name}
                 </button>
               ))}
-              <Button className="w-full">Resume</Button>
+              <Button onClick={handleClick} className="w-full">
+                Resume
+              </Button>
             </nav>
           </div>
         </div>
